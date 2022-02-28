@@ -1,0 +1,25 @@
+﻿This file is for testing purposes, it contains 3 valid log lines and 22 invalid ones.
+
+USER-SERVICE - - [32/Aug/2018:09:21:56 +0000] "GET /users HTTP/1.1" 201
+INVOICE-SERVICE - - [17/Abc/2018:09:21:55 +0000] "PUT /invoices HTTP/1.1" 201
+USER-SERVICE - - [17/Aug/-2000:09:21:56 +0000] "GET /users HTTP/1.1" 201
+USER-SERVICE - - [17/Aug/2018:48:21:57 +0000] "POST /users HTTP/1.1" 201
+USER-SERVICE - - [17/Aug/2018:08:21:57 +0000] "POST /users HTTP/1.1" 5040
+INVOICE-SERVICE - - [17/Aug/2018:09:91:58 +0000] "POST /invoices HTTP/1.1" 201
+service of administration - - [17/Aug/2018:09:21:333 +0011] "DELETE /invoices HTTP/1.1" 201
+service of administration - - [17/Aug/2018:09:21:03 +0000] "DELETE /invoices HTTP/1.1" 201
+service of administration - - [17/Aug/2018:09:21:03 +0000] "DELETE invoices HTTP/1.1" 201
+INVoice - - [17/Aug/2018:09:21:55 +0000] "PATCH /invoices HTTP/1.1" 400
+USER  SERVICE - connected successfully- [17/Aug/2018:09:21:56 +0000] "GET /users HTTP/1.1" 201
+ - - [17/Aug/2018:09:21:56 +0000] "GET /users HTTP/1.1" 201
+USER  SERVICE - -  "GET /users HTTP/1.1" 201
+USER  SERVICE - - [17/Aug/2018:09:21:56 +0000] "GET /users HTTP/1.1" 
+!!&*èè9^
+USER-SERVICE - - [17/Aug/2018:09:21:57 +0000] "POST /users HTTP/1.1"
+USER-SERVICE - - [17/Aug/2018:09:21:57 +0000] "WHATEVER /users HTTP/1.1" 201
+my_name - - is  - - john doe
+my_name - - is john doe
+
+USER___SERVICE - - [17/Aug/2018:09:21:54 +0000] "POST /users HTTP/1.1" 400
+THIS-IS-USER-SERVICE - - [17/Aug/2018:09:21:53 +0000] "GET /users HTTP/1.1" 201
+	USER-SERVICE - - [17/Aug/2018:09:21:57 +0000] "POST /users HTTP/1.1" 201

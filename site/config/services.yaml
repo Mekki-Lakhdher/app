@@ -20,5 +20,20 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    log_file_loader:
+        class: App\Service\LogFileLoader
+        public: true
+
+    log_file_reader:
+        class: App\Service\LogFileReader
+        public: true
+
+    log_file_saver:
+        class: App\Service\LogFileSaver
+        public: true
+
+    log_file_line_validator:
+        class: App\Service\LogFileLineValidator
+        public: true
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
