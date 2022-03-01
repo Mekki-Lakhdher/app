@@ -14,20 +14,20 @@ class LogEntryCountController extends AbstractController
     #[Route('/count', name: 'count')]
     public function index(Request $request,ManagerRegistry $doctrine): Response
     {
-    	//?serviceNames[]=user&serviceNames[]=invoice&serviceNames[]=primary
-        $serviceNames=$request->query->get('serviceNames');
-        $startDate=$request->query->get('startDate');
-        $endDate=$request->query->get('endDate');
-        $statusCode=$request->query->get('statusCode');
-        
+    	//?serviceNames[]=user&serviceNames[]=invoice&serviceNames[]=primary&startDate="17/08/2018 09:21:56"&endDate="17/08/2018 09:21:56"&statusCode=200
+        $service_names=$request->query->get('serviceNames');
+        $start_date=$request->query->get('startDate');
+        $end_date=$request->query->get('endDate');
+        $status_code=$request->query->get('statusCode');
 
         $repository = $doctrine->getRepository(Log::class);
-        $counter=$repository->countLogEntries();
+        $result=$repository->countLogEntries($service_names,$start_date,$end_date,$status_code);
 
-        dd($counter);
+        $response = new Response();
+        $response->setContent(json_encode([
+            'counter' => intval($result['counter']),
+        ]));
+        return $response;
 
-        return $this->render('log_entry_count/index.html.twig', [
-            'controller_name' => 'LogEntryCountController',
-        ]);
     }
 }
